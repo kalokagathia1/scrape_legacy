@@ -1,0 +1,28 @@
+{
+  "name": "scrape_legacy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-kal:kalokagathia1/scrape_legacy.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "apify": "^0.21.9",
+    "bottleneck": "^2.19.5",
+    "extract-date": "^2.8.2",
+    "fast-csv": "^4.3.5",
+    "got": "^11.8.0",
+    "into-stream": "^6.0.0",
+    "lodash": "^4.17.20",
+    "luxon": "^1.25.0",
+    "mkdirp": "^1.0.4",
+    "nameparts": "^1.1.3",
+    "piscina": "^1.6.3"
+  }
+}

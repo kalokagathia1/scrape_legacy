@@ -1,0 +1,246 @@
+[
+  {
+    "id": "all",
+    "state": "All States"
+  },
+  {
+    "id": "2",
+    "state": "Alaska"
+  },
+  {
+    "id": "3",
+    "state": "Alabama"
+  },
+  {
+    "id": "4",
+    "state": "Arkansas"
+  },
+  {
+    "id": "5",
+    "state": "Arizona"
+  },
+  {
+    "id": "7",
+    "state": "California"
+  },
+  {
+    "id": "8",
+    "state": "Colorado"
+  },
+  {
+    "id": "9",
+    "state": "Connecticut"
+  },
+  {
+    "id": "10",
+    "state": "District of Columbia"
+  },
+  {
+    "id": "11",
+    "state": "Delaware"
+  },
+  {
+    "id": "12",
+    "state": "Florida"
+  },
+  {
+    "id": "13",
+    "state": "Georgia"
+  },
+  {
+    "id": "14",
+    "state": "Hawaii"
+  },
+  {
+    "id": "15",
+    "state": "Iowa"
+  },
+  {
+    "id": "16",
+    "state": "Idaho"
+  },
+  {
+    "id": "17",
+    "state": "Illinois"
+  },
+  {
+    "id": "18",
+    "state": "Indiana"
+  },
+  {
+    "id": "19",
+    "state": "Kansas"
+  },
+  {
+    "id": "20",
+    "state": "Kentucky"
+  },
+  {
+    "id": "21",
+    "state": "Louisiana"
+  },
+  {
+    "id": "22",
+    "state": "Massachusetts"
+  },
+  {
+    "id": "24",
+    "state": "Maryland"
+  },
+  {
+    "id": "25",
+    "state": "Maine"
+  },
+  {
+    "id": "26",
+    "state": "Michigan"
+  },
+  {
+    "id": "27",
+    "state": "Minnesota"
+  },
+  {
+    "id": "28",
+    "state": "Missouri"
+  },
+  {
+    "id": "29",
+    "state": "Mississippi"
+  },
+  {
+    "id": "30",
+    "state": "Montana"
+  },
+  {
+    "id": "33",
+    "state": "North Carolina"
+  },
+  {
+    "id": "34",
+    "state": "North Dakota"
+  },
+  {
+    "id": "35",
+    "state": "Nebraska"
+  },
+  {
+    "id": "37",
+    "state": "New Hampshire"
+  },
+  {
+    "id": "38",
+    "state": "New Jersey"
+  },
+  {
+    "id": "39",
+    "state": "New Mexico"
+  },
+  {
+    "id": "43",
+    "state": "Nevada"
+  },
+  {
+    "id": "44",
+    "state": "New York"
+  },
+  {
+    "id": "45",
+    "state": "Ohio"
+  },
+  {
+    "id": "46",
+    "state": "Oklahoma"
+  },
+  {
+    "id": "48",
+    "state": "Oregon"
+  },
+  {
+    "id": "49",
+    "state": "Pennsylvania"
+  },
+  {
+    "id": "52",
+    "state": "Rhode Island"
+  },
+  {
+    "id": "53",
+    "state": "South Carolina"
+  },
+  {
+    "id": "54",
+    "state": "South Dakota"
+  },
+  {
+    "id": "56",
+    "state": "Tennessee"
+  },
+  {
+    "id": "57",
+    "state": "Texas"
+  },
+  {
+    "id": "58",
+    "state": "Utah"
+  },
+  {
+    "id": "59",
+    "state": "Virginia"
+  },
+  {
+    "id": "60",
+    "state": "Vermont"
+  },
+  {
+    "id": "61",
+    "state": "Washington"
+  },
+  {
+    "id": "62",
+    "state": "Wisconsin"
+  },
+  {
+    "id": "63",
+    "state": "West Virginia"
+  },
+  {
+    "id": "64",
+    "state": "Wyoming"
+  },
+  {
+    "id": "183",
+    "state": "American Samoa"
+  },
+  {
+    "id": "179",
+    "state": "Guam"
+  },
+  {
+    "id": "185",
+    "state": "Marshall Islands"
+  },
+  {
+    "id": "184",
+    "state": "Micronesia"
+  },
+  {
+    "id": "182",
+    "state": "Northern Marianas"
+  },
+  {
+    "id": "186",
+    "state": "Palau"
+  },
+  {
+    "id": "180",
+    "state": "Puerto Rico"
+  },
+  {
+    "id": "181",
+    "state": "U.S. Virgin Islands"
+  },
+  {
+    "id": "205",
+    "state": "U.S. Minor Outlying Islands"
+  }
+]
