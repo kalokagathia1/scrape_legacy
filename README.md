@@ -1,5 +1,10 @@
 1. Install node.js: https://nodejs.org
 2. Run `npm install`
-3. Set up config.json:
-   1. Choose state name. See `states.json` for full list
-4. Run `node index`
+
+# Example for Nevada
+
+1. Run `node index nevada`
+2. Run `node to_csv_threaded nevada` 
+3. Run `node combine_csv nevada`
+
+Final CSV will be in root directory
