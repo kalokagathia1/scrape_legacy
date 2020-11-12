@@ -7,6 +7,8 @@ module.exports = function process(o) {
   if (!o.id) return;
   const { name, obithtml: html } = o;
 
+  if (~name.indexOf("??????????")) return;
+
   // Name
   const details = {
     name,
@@ -83,5 +85,7 @@ module.exports = function process(o) {
     birthYear,
     deathYear,
     location,
+    link: o.obitlink,
+    text: html.replace(/\n+/g, " "),
   };
 };

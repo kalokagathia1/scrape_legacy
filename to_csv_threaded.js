@@ -1,10 +1,11 @@
 const fs = require("fs");
 const path = require("path");
-const { resolve } = require("path");
+const Pool = require("piscina");
+const globby = require("globby");
 const intoStream = require("into-stream");
+const { resolve } = require("path");
 const { format } = require("fast-csv");
 const processObit = require("./util/process_obit");
-const Pool = require("piscina");
 
 const dataset = process.argv[2];
 
@@ -25,41 +26,44 @@ if (!dataset) {
   process.exit(0);
 }
 
-const datasetDir = path.join(".", "results", dataset, "obits");
+// Write header file
+fs.writeFileSync(
+  path.join(outDir, "head.csv"),
+  `"id","name","salutation","firstName","middleName","lastName","generation","suffix","aliases","age","dob","dod","birthYear","deathYear","location","link","text"\n`
+);
 
-const files = fs.readdirSync(datasetDir);
+async function run() {
+  const datasetDir = path.join(".", "results", dataset);
+  console.log("DATASET", datasetDir);
+  const files = (await globby(path.join(datasetDir, "**", "*.json"))).filter((x) => !~x.indexOf("/pages/"));
 
-const dirStream = intoStream(files);
+  const dirStream = intoStream(files);
 
-pool.on("drain", () => {
-  if (dirStream.isPaused()) {
-    console.log("resuming...", pool.queueSize);
-    dirStream.resume();
-  }
-});
-
-dirStream
-  .on("data", (buf) => {
-    const file = path.join(datasetDir, buf.toString());
-
-    pool
-      .runTask({ dataset, file })
-      .then(() => console.log(`Done: ${file}`))
-      .catch((err) => console.log("ERR", err));
-
-    if (pool.queueSize === pool.options.maxQueue) {
-      console.log("pausing...", pool.queueSize);
-      dirStream.pause();
+  pool.on("drain", () => {
+    if (dirStream.isPaused()) {
+      console.log("resuming...", pool.queueSize);
+      dirStream.resume();
     }
-  })
-  .on("error", console.error)
-  .on("end", () => {
-    console.log("done");
   });
 
-// async function run() {
+  dirStream
+    .on("data", (buf) => {
+      const file = buf.toString();
 
-//   await Promise.all(files.map((file) => pool.runTask({ file: path.join(datasetDir, file) })));
+      pool
+        .runTask({ dataset, file })
+        .then(() => console.log(`Done: ${file}`))
+        .catch((err) => console.log("ERR", err));
 
-//   console.log("DONE!");
-// }
+      if (pool.queueSize === pool.options.maxQueue) {
+        console.log("pausing...", pool.queueSize);
+        dirStream.pause();
+      }
+    })
+    .on("error", console.error)
+    .on("end", () => {
+      console.log("DONE READING!");
+    });
+}
+
+run();
