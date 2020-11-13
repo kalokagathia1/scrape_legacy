@@ -10,7 +10,7 @@ async function initialize() {
     const outfile = path.join(outDir, `${Math.random().toString(16).slice(2)}.csv`);
 
     const fstream = fs.createWriteStream(outfile);
-    const csv = format({ quote: true });
+    const csv = format({ quote: '"', quoteColumns: true });
     csv.pipe(fstream);
 
     resolve(csv);
@@ -22,7 +22,7 @@ async function initialize() {
       let json = dirty;
       if (!json.text) json = processObit(dirty);
 
-      if (!json) return;
+      if (!json) throw new Error(`No json! ${file}`);
 
       if (
         !csv.write([
@@ -47,7 +47,9 @@ async function initialize() {
       ) {
         await new Promise((resolve) => csv.once("drain", resolve));
       }
-    } catch (e) {}
+    } catch (e) {
+      throw e;
+    }
   };
 }
 

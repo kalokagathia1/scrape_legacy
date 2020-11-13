@@ -41,7 +41,7 @@ async function run() {
 
   pool.on("drain", () => {
     if (dirStream.isPaused()) {
-      console.log("resuming...", pool.queueSize);
+      // console.log("resuming...", pool.queueSize);
       dirStream.resume();
     }
   });
@@ -52,11 +52,13 @@ async function run() {
 
       pool
         .runTask({ dataset, file })
-        .then(() => console.log(`Done: ${file}`))
+        .then(() => {
+          // console.log(`Done: ${file}`)
+        })
         .catch((err) => console.log("ERR", err));
 
       if (pool.queueSize === pool.options.maxQueue) {
-        console.log("pausing...", pool.queueSize);
+        // console.log("pausing...", pool.queueSize);
         dirStream.pause();
       }
     })

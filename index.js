@@ -23,7 +23,7 @@ const limiter = new Bottleneck({
 
 function makeUrl({ page, affId = 0 }) {
   // return `https://www.legacy.com/obituaries/inquirer/obituary-search.aspx?daterange=88888&startdate=20180101&enddate=20201102&countryid=1&stateid=${stateId}&affiliateid=${affiliate}`;
-  return `https://www.legacy.com/obituaries/inquirer/api/obituarysearch?&affiliateid=${affId}&countryid=1&daterange=88888&stateid=${stateId}&townname=&keyword=&startdate=20180101&enddate=20201102&entriesperpage=10&page=${page}&previousDateType=0&position=undefined`;
+  return `https://www.legacy.com/obituaries/legacy/api/obituarysearch?&affiliateid=${affId}&countryid=1&daterange=88888&stateid=${stateId}&townname=&keyword=&startdate=20180101&enddate=20201102&entriesperpage=10&page=${page}&previousDateType=0&position=undefined`;
 }
 
 async function rawRequest({ page, affId }) {
